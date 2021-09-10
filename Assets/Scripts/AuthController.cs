@@ -10,8 +10,11 @@ public class AuthController : MonoBehaviour
 {
     [SerializeField] InputField Displayname, RegisterEmailAddress, RegisterPassword, LoginEmailAddress, LoginPassword;
 
-    public GameObject LoginTab, RegisterTab, LoginButton, RegisterButton, LoginLoading, RegisterLoading, RegisterSuccess;
+    public GameObject LoginTab, RegisterTab, LoginButton, RegisterButton, LoginLoading, RegisterLoading, RegisterSuccess, LoadingPanel;
     public Text LoginErrorMessage, RegisterErrorMessage;
+    public Slider progressBar;
+
+    AsyncOperation loadingOperation;
 
     private void Update()
     {
@@ -23,6 +26,11 @@ public class AuthController : MonoBehaviour
         if (RegisterTab.activeSelf)
         {
             EnableRegisterButton();
+        }
+
+        if (LoadingPanel.activeSelf)
+        {
+            UpdateProgressBar();
         }
 
 
@@ -62,6 +70,11 @@ public class AuthController : MonoBehaviour
 
     }
 
+    void UpdateProgressBar()
+    {
+        progressBar.value = Mathf.Clamp01(loadingOperation.progress / 0.9f);
+    }
+
 
 
 
@@ -89,7 +102,10 @@ public class AuthController : MonoBehaviour
         Debug.Log("Logged in");
         LoginLoading.SetActive(false);
         LoginButton.SetActive(true);
-        SceneManager.LoadSceneAsync("Game");
+
+        // loading game assync to use loadbar
+        loadingOperation = SceneManager.LoadSceneAsync("Game");
+        LoadingPanel.SetActive(true);
     }
 
     private void onLoginError(PlayFabError error)
