@@ -6,8 +6,17 @@ using UnityEngine;
 public class PlacementController : MonoBehaviour
 {
 
+    //[SerializeField]
+    //private GameObject dominoPiecePrefab;
+
     [SerializeField]
-    private GameObject dominoPiecePrefab;
+    private GameObject finalPiece, pieceOne, pieceTwo, pieceThree, pieceFour;
+
+    [SerializeField]
+    private GameObject ramp45, shortVerticalRamp, longRamp, longHorizontalRamp;
+
+    [SerializeField]
+    private GameObject piecesTab, structuresTab;
 
     [SerializeField]
     private KeyCode newObjectHotkey = KeyCode.A;
@@ -17,7 +26,7 @@ public class PlacementController : MonoBehaviour
 
     void Update()
     {
-        HandleObjectHotKey();
+        //HandleObjectHotKey();
 
         if (selectedGameObject != null)
         {
@@ -53,7 +62,6 @@ public class PlacementController : MonoBehaviour
         {
             if (hitInfo.collider.tag == "Floor")
             {
-                Debug.Log(hitInfo.normal, selectedGameObject.transform);
                 selectedGameObject.transform.position = new Vector3(hitInfo.point.x, 1.053842f, hitInfo.point.z); // place object in the mouse position
                 selectedGameObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal); // rotates the objects based on the normal of the object
             }
@@ -61,18 +69,69 @@ public class PlacementController : MonoBehaviour
         }
     }
 
-    private void HandleObjectHotKey()
+
+
+    // ---------------- HANDLE TABS ----------------
+    public void SwitchToPieces()
     {
-        if (Input.GetKeyDown(newObjectHotkey))
-        {
-            if (selectedGameObject == null)
-            {
-                selectedGameObject = Instantiate(dominoPiecePrefab);
-            }
-            else
-            {
-                Destroy(selectedGameObject);
-            }
-        }
+        piecesTab.SetActive(true);
+        structuresTab.SetActive(false);
     }
+
+    public void SwitchToStructures()
+    {
+        piecesTab.SetActive(false);
+        structuresTab.SetActive(true);
+    }
+    // ---------------- ---------------- ----------------
+
+
+    // ---------------- HANDLE INSTANTIATE PIECES ----------------
+    void HandleSelectPrefab(GameObject prefab)
+    {
+        if (selectedGameObject == null) selectedGameObject = Instantiate(prefab, prefab.transform.position, prefab.transform.rotation);
+        else Destroy(selectedGameObject);
+
+    }
+
+    public void GenerateFinalPiece()
+    {
+        HandleSelectPrefab(finalPiece);
+    }
+
+    public void GeneratePieceOne()
+    {
+        HandleSelectPrefab(pieceOne);
+    }
+
+    public void GeneratePieceTwo()
+    {
+        HandleSelectPrefab(pieceTwo);
+    }
+    public void GeneratePieceThree()
+    {
+        HandleSelectPrefab(pieceThree);
+    }
+
+    public void GeneratePieceFour()
+    {
+        HandleSelectPrefab(pieceFour);
+    }
+    // ---------------- ---------------- ---------------- ----------------
+
+
+    //private void HandleObjectHotKey()
+    //{
+    //    if (Input.GetKeyDown(newObjectHotkey))
+    //    {
+    //        if (selectedGameObject == null)
+    //        {
+    //            selectedGameObject = Instantiate(dominoPiecePrefab);
+    //        }
+    //        else
+    //        {
+    //            Destroy(selectedGameObject);
+    //        }
+    //    }
+    //}
 }

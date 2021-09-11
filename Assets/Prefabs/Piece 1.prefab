@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5655216026199976526}
   - component: {fileID: 5655216026199976513}
   m_Layer: 0
-  m_Name: Domino piece
+  m_Name: Piece 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1e08cf8ed8ad4e8418410fe257ba3a8b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
