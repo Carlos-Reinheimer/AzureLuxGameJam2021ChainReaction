@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Piece 2 - Horizontal 1.prefab.meta
+guid: 4c033d1e5d8604344b640638d541587f
+PrefabImporter:
+=======
 guid: 06d29d9c178835746896e67bc1f59361
 folderAsset: yes
 DefaultImporter:
+>>>>>>> main:Assets/Prefabs/Cenario.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

@@ -67,7 +67,15 @@ public class SandboxPlacementController : MonoBehaviour
             scaleSliderY.interactable = false;
             scaleSliderZ.interactable = false;
         }
+        else
+        {
+            scaleSliderX.interactable = true;
+            scaleSliderY.interactable = true;
+            scaleSliderZ.interactable = true;
+        }
+
         if (!objectInFocus.gameObject.GetComponent<PieceController>().canScaleMass) scaleMass.interactable = false;
+        else scaleMass.interactable = true;
 
         objectInFocus.transform.localScale = new Vector3(scaleSliderX.value, scaleSliderY.value, scaleSliderZ.value);
         hasEdit = true;
@@ -106,6 +114,7 @@ public class SandboxPlacementController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
+                Debug.Log(hit.collider.tag);
                 if (hit.collider.tag == "Structure" || hit.collider.tag == "Piece")
                 {
                     ControlObjectTab.SetActive(true);
@@ -314,6 +323,9 @@ public class SandboxPlacementController : MonoBehaviour
                     prefab.transform.GetChild(i).GetComponent<Rigidbody>().isKinematic = true;
                 }
             }
+
+            //if (prefab.gameObject.GetComponent<PieceController>().rotate90Deg) prefab.transform.Rotate(-90f, 0, 0f);
+            //Quaternion newRotation = prefab.gameObject.GetComponent<PieceController>().rotate90Deg ? new Quaternion(-90, prefab.transform.rotation.y, prefab.transform.rotation.z, prefab.transform.rotation.w) : prefab.transform.rotation;
             selectedGameObject = Instantiate(prefab, prefab.transform.position, prefab.transform.rotation);
         }
         else Destroy(selectedGameObject);
