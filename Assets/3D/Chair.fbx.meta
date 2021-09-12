@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Cenario/copo.fbx.meta
+guid: 8e3dc816793ccea458e35bfcb4f64ef2
+=======
 guid: 980a16759d1743c4d929ca739c1716b0
+>>>>>>> main:Assets/3D/Chair.fbx.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []

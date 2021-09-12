@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Cenario.meta
+guid: 06d29d9c178835746896e67bc1f59361
+folderAsset: yes
+DefaultImporter:
+=======
 guid: 0a343e7fc69066645a1e820b0b448298
 PrefabImporter:
+>>>>>>> SandboxMode:Assets/Scenes/Level 1/Table.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

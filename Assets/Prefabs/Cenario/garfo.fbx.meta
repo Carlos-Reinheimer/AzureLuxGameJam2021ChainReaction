@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Cenario/bottle.fbx.meta
+guid: 345e346b3fa1e664f9b372a848d4cf53
+=======
 guid: 9d67fba8e20e9834bbb73455b54ba880
+>>>>>>> SandboxMode:Assets/Prefabs/Cenario/garfo.fbx.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []

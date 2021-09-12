@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Rampa45New.prefab.meta
+guid: 9d9301471a95741438bfbe60f2924fd4
+PrefabImporter:
+=======
 guid: e8d6e5a1fa294f24b958b8abeb16d9f4
 folderAsset: yes
 DefaultImporter:
+>>>>>>> main:Assets/Materials/WallTextures.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
