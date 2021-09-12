@@ -7,6 +7,7 @@ TagManager:
   - Fire
   - Floor
   - Piece
+  - Structure
   layers:
   - Default
   - TransparentFX
