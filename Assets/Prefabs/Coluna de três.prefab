@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3635438412317389841}
   - component: {fileID: -6755364666717614407}
-  - component: {fileID: -1124872338002110326}
   m_Layer: 0
   m_Name: "Coluna de tr\xEAs"
-  m_TagString: Piece
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,26 +48,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalPosition: {x: 0, y: 0, z: 0}
   originalRotation: {x: 0, y: 0, z: 0, w: 0}
-  canScaleSize: 0
-  canScaleMass: 0
-  isACollection: 0
---- !u!114 &-1124872338002110326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3526755710253214401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2b68dc6c028414d809f0ff3e121a81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originalPosition: {x: 0, y: 0, z: 0}
-  originalRotation: {x: 0, y: 0, z: 0, w: 0}
-  canScaleSize: 0
-  canScaleMass: 0
-  isACollection: 1
 --- !u!1001 &411846269997707287
 PrefabInstance:
   m_ObjectHideFlags: 0

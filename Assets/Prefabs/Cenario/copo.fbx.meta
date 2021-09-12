@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Prefabs/Cenario/copo.fbx.meta
 guid: 241a82adbd0b0494e962cfe54f67b495
-=======
-guid: 345e346b3fa1e664f9b372a848d4cf53
->>>>>>> levels:Assets/Prefabs/Cenario/bottle.fbx.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []

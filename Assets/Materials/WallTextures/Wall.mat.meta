@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Scenes/Level 1/Mesa.mat.meta
-guid: 265b5151029099d45a12bd882cde07dd
-=======
 guid: d40b1cd6dc8ba844e9aa6fd713e22e03
->>>>>>> main:Assets/Materials/WallTextures/Wall.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
