@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 530fa0d0c9958bf47be344f6c5a1f5e3
+=======
+<<<<<<< HEAD:Assets/Prefabs/Cenario/faca.fbx.meta
+guid: 530fa0d0c9958bf47be344f6c5a1f5e3
+=======
+guid: 853cccdbf344ea7498ebe90fe40cf5cb
+>>>>>>> levels:Assets/Prefabs/Cenario/colher.fbx.meta
+>>>>>>> SandboxMode
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []

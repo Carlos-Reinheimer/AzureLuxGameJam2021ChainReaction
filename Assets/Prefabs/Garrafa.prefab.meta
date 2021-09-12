@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: db86f11e28ac49b4d9228dcba185fa14
+=======
+<<<<<<< HEAD:Assets/Prefabs/Copo.prefab.meta
+guid: f636a32d9779f29479a1426ceece4043
+=======
+guid: db86f11e28ac49b4d9228dcba185fa14
+>>>>>>> SandboxMode:Assets/Prefabs/Garrafa.prefab.meta
+>>>>>>> SandboxMode
 PrefabImporter:
   externalObjects: {}
   userData: 

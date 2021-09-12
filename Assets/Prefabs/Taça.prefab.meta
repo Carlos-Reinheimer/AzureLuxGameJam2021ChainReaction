@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 1f6c84cfa72e07e47a71efc7ef300277
+=======
+<<<<<<< HEAD:Assets/Prefabs/Garfo.prefab.meta
+guid: 51f03512d376e4c46a5a7c23f56fd54c
+=======
+guid: 1f6c84cfa72e07e47a71efc7ef300277
+>>>>>>> SandboxMode:Assets/Prefabs/Taça.prefab.meta
+>>>>>>> SandboxMode
 PrefabImporter:
   externalObjects: {}
   userData: 

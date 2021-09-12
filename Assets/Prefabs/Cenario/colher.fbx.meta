@@ -1,14 +1,29 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Prefabs/Cenario/colher.fbx.meta
 guid: 853cccdbf344ea7498ebe90fe40cf5cb
+=======
+guid: db33950443538e643a036d6d9162faef
+>>>>>>> SandboxMode:Assets/Prefabs/Cenario/mesa.fbx.meta
+=======
+guid: 853cccdbf344ea7498ebe90fe40cf5cb
+>>>>>>> SandboxMode
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
   externalObjects: {}
   materials:
+<<<<<<< HEAD
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
+=======
+    materialImportMode: 1
+    materialName: 3
+    materialSearch: 1
+    materialLocation: 0
+>>>>>>> SandboxMode
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -31,7 +46,11 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
+<<<<<<< HEAD
     isReadable: 0
+=======
+    isReadable: 1
+>>>>>>> SandboxMode
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -39,11 +58,19 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+<<<<<<< HEAD
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
     fileIdsGeneration: 2
+=======
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
+>>>>>>> SandboxMode
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -55,6 +82,7 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     meshOptimizationFlags: -1
+<<<<<<< HEAD
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -70,6 +98,23 @@ ModelImporter:
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+=======
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+>>>>>>> SandboxMode
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
@@ -92,10 +137,17 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
+<<<<<<< HEAD
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+=======
+  animationType: 1
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+>>>>>>> SandboxMode
   additionalBone: 0
   userData: 
   assetBundleName: 

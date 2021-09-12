@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6108215366753433008}
   m_Layer: 0
   m_Name: Piece 2 - Horizontal
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,11 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
+<<<<<<< HEAD
   m_IsKinematic: 0
+=======
+  m_IsKinematic: 1
+>>>>>>> SandboxMode
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

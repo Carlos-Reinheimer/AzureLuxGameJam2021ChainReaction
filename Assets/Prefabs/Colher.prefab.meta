@@ -1,5 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Prefabs/Colher.prefab.meta
 guid: 9a54e0e2c7834184092276121b54ee02
+=======
+guid: 5fa1c05da98ba7441b95bb6936123d35
+>>>>>>> SandboxMode:Assets/Prefabs/Mesa.prefab.meta
+=======
+<<<<<<< HEAD:Assets/Prefabs/Mesa.prefab.meta
+guid: bfc10d38f915bc94bb2325ee1b0e2214
+=======
+guid: 9a54e0e2c7834184092276121b54ee02
+>>>>>>> levels:Assets/Prefabs/Colher.prefab.meta
+>>>>>>> SandboxMode
 PrefabImporter:
   externalObjects: {}
   userData: 
