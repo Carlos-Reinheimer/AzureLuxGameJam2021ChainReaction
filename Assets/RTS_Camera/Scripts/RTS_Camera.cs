@@ -206,7 +206,7 @@ namespace RTS_Cam
         /// </summary>
         private void Move()
         {
-            if (useKeyboardInput)
+            if (useKeyboardInput && !Input.GetButton("Fire1"))
             {
                 Vector3 desiredMove = new Vector3(KeyboardInput.x, 0, KeyboardInput.y);
 
@@ -257,7 +257,8 @@ namespace RTS_Cam
         private void HeightCalculation()
         {
             float distanceToGround = DistanceToGround();
-            if (useScrollwheelZooming)
+            if (useScrollwheelZooming && !Input.GetButton("Fire1"))
+                //m_Transform.rotation = Quaternion.LookRotation(Vector3.forward);
                 zoomPos += ScrollWheel * Time.deltaTime * scrollWheelZoomingSensitivity;
             if (useKeyboardZooming)
                 zoomPos += ZoomDirection * Time.deltaTime * keyboardZoomingSensitivity;
