@@ -1,6 +1,14 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scenes/Level 3/Piece 1.prefab
 --- !u!1 &5655216026199976512
+=======
+--- !u!1 &5809046875967796324
+>>>>>>> levels:Assets/Prefabs/Faca.prefab
+=======
+--- !u!1 &5655216026199976512
+>>>>>>> levels
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,6 +16,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scenes/Level 3/Piece 1.prefab
+=======
+>>>>>>> levels
   - component: {fileID: 5655216026199976525}
   - component: {fileID: 5655216026199976524}
   - component: {fileID: 5655216026199976527}
@@ -16,17 +28,41 @@ GameObject:
   - component: {fileID: -7232467537943980345}
   m_Layer: 0
   m_Name: Piece 1
+<<<<<<< HEAD
+=======
+  - component: {fileID: 6617531642600189662}
+  - component: {fileID: 7816536339085025659}
+  - component: {fileID: 5448543195028297137}
+  - component: {fileID: 6655344479841474268}
+  - component: {fileID: 6655344479841474269}
+  m_Layer: 0
+  m_Name: Faca
+>>>>>>> levels:Assets/Prefabs/Faca.prefab
+=======
+>>>>>>> levels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scenes/Level 3/Piece 1.prefab
 --- !u!4 &5655216026199976525
+=======
+--- !u!4 &6617531642600189662
+>>>>>>> levels:Assets/Prefabs/Faca.prefab
+=======
+--- !u!4 &5655216026199976525
+>>>>>>> levels
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scenes/Level 3/Piece 1.prefab
+=======
+>>>>>>> levels
   m_GameObject: {fileID: 5655216026199976512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -36,20 +72,54 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5655216026199976524
+<<<<<<< HEAD
+=======
+  m_GameObject: {fileID: 5809046875967796324}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -9.99, y: 4.9680037, z: -2.73}
+  m_LocalScale: {x: 2.4253953, y: 2.4253953, z: 2.4253953}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!33 &7816536339085025659
+>>>>>>> levels:Assets/Prefabs/Faca.prefab
+=======
+>>>>>>> levels
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scenes/Level 3/Piece 1.prefab
   m_GameObject: {fileID: 5655216026199976512}
   m_Mesh: {fileID: 4493585093827132993, guid: d9164e851300d424c9505b44cf913e06, type: 3}
 --- !u!23 &5655216026199976527
+=======
+  m_GameObject: {fileID: 5809046875967796324}
+  m_Mesh: {fileID: -4458265513421730557, guid: 530fa0d0c9958bf47be344f6c5a1f5e3, type: 3}
+--- !u!23 &5448543195028297137
+>>>>>>> levels:Assets/Prefabs/Faca.prefab
+=======
+  m_GameObject: {fileID: 5655216026199976512}
+  m_Mesh: {fileID: 4493585093827132993, guid: d9164e851300d424c9505b44cf913e06, type: 3}
+--- !u!23 &5655216026199976527
+>>>>>>> levels
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scenes/Level 3/Piece 1.prefab
   m_GameObject: {fileID: 5655216026199976512}
+=======
+  m_GameObject: {fileID: 5809046875967796324}
+>>>>>>> levels:Assets/Prefabs/Faca.prefab
+=======
+  m_GameObject: {fileID: 5655216026199976512}
+>>>>>>> levels
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,8 +132,17 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scenes/Level 3/Piece 1.prefab
   - {fileID: 3758952881610933197, guid: d9164e851300d424c9505b44cf913e06, type: 3}
   - {fileID: 8389101521354434167, guid: d9164e851300d424c9505b44cf913e06, type: 3}
+=======
+  - {fileID: -8477521408866263191, guid: 530fa0d0c9958bf47be344f6c5a1f5e3, type: 3}
+>>>>>>> levels:Assets/Prefabs/Faca.prefab
+=======
+  - {fileID: 3758952881610933197, guid: d9164e851300d424c9505b44cf913e06, type: 3}
+  - {fileID: 8389101521354434167, guid: d9164e851300d424c9505b44cf913e06, type: 3}
+>>>>>>> levels
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,6 +164,10 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scenes/Level 3/Piece 1.prefab
+=======
+>>>>>>> levels
 --- !u!114 &1942612470482902039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,12 +183,26 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   originalRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!54 &-111377486577278755
+<<<<<<< HEAD
+=======
+--- !u!54 &6655344479841474268
+>>>>>>> levels:Assets/Prefabs/Faca.prefab
+=======
+>>>>>>> levels
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scenes/Level 3/Piece 1.prefab
   m_GameObject: {fileID: 5655216026199976512}
+=======
+  m_GameObject: {fileID: 5809046875967796324}
+>>>>>>> levels:Assets/Prefabs/Faca.prefab
+=======
+  m_GameObject: {fileID: 5655216026199976512}
+>>>>>>> levels
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -115,16 +212,42 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scenes/Level 3/Piece 1.prefab
 --- !u!65 &-7232467537943980345
+=======
+--- !u!65 &6655344479841474269
+>>>>>>> levels:Assets/Prefabs/Faca.prefab
+=======
+--- !u!65 &-7232467537943980345
+>>>>>>> levels
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scenes/Level 3/Piece 1.prefab
   m_GameObject: {fileID: 5655216026199976512}
+=======
+  m_GameObject: {fileID: 5809046875967796324}
+>>>>>>> levels:Assets/Prefabs/Faca.prefab
+=======
+  m_GameObject: {fileID: 5655216026199976512}
+>>>>>>> levels
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scenes/Level 3/Piece 1.prefab
   m_Size: {x: 1, y: 2, z: 0.25}
   m_Center: {x: 0, y: 0, z: 0}
+=======
+  m_Size: {x: 0.20283614, y: 0.04145477, z: 2.4314082}
+  m_Center: {x: 0.009014798, y: -0.0011437768, z: -0.24006778}
+>>>>>>> levels:Assets/Prefabs/Faca.prefab
+=======
+  m_Size: {x: 1, y: 2, z: 0.25}
+  m_Center: {x: 0, y: 0, z: 0}
+>>>>>>> levels
