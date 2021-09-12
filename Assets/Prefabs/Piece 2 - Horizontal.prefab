@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5456206412101601205}
   - component: {fileID: 5456206412101601204}
   - component: {fileID: -1114819221844582197}
-  - component: {fileID: -6880586603579636386}
+  - component: {fileID: 6156976801645896067}
+  - component: {fileID: 6108215366753433008}
   m_Layer: 0
   m_Name: Piece 2 - Horizontal
   m_TagString: Untagged
@@ -98,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalPosition: {x: 0, y: 0, z: 0}
   originalRotation: {x: 0, y: 0, z: 0, w: 0}
---- !u!54 &-6880586603579636386
+--- !u!54 &6156976801645896067
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,7 +107,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5456206412101601206}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -114,3 +115,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6108215366753433008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456206412101601206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2.0000005, z: 0.25}
+  m_Center: {x: 0, y: 0, z: 0}
