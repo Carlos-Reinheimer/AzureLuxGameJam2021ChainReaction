@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/3D/Materials.meta
 guid: b739c4ab60d4f5b448c2f2861b82396b
+=======
+guid: 06d29d9c178835746896e67bc1f59361
+>>>>>>> levels:Assets/Prefabs/Cenario.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
