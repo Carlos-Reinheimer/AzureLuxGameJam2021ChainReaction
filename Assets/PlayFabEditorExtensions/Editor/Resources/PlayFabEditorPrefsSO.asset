@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayFabEditorPrefsSO
   m_EditorClassIdentifier: 
   DevAccountEmail: carlosgreinheimer@gmail.com
-  DevAccountToken: r6pip943z4psynny7jzy41cqxdz7sccqdk1dy7x8iwr68k78bs91q33ot3aciy7w91ufwanftd3b3xeitysnspfxhrpi6gf5jba54bt533cpems8g1bz9mohrh9drbxcwtaqykidqmhrys3wkcgwsupzuieqsnm3ocfz773tjxe5t85o5axafdxke16hrim5s76fejqt
-  SelectedStudio: GameJam
+  DevAccountToken: wkzjeufamgt6zjco1xz5o3qumjmu4mtbz7yfpzqqu4jz5t1rkcfge3ezw4msbwxihk4cmabqzb9tyny1n6r544a46wyocdof6uq3sdi1s9s4rxyb9rkb7o47d3g4wjrjwn6qxgqjhgtfz4wiyuamomxmg6ierrhpzbtgbzgq4cio83romsetsjzqybxu8udzeeasr1jf
+  SelectedStudio: 
   SdkPath: Assets/PlayFabSDK
   EdExPath: 
   LocalCloudScriptPath: 
