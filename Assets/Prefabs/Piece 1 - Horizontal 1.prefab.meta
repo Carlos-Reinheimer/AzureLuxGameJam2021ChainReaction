@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Piece 1 - Horizontal 1.prefab.meta
 guid: 881feb95bae4be5448383075503337dd
+=======
+guid: 0a343e7fc69066645a1e820b0b448298
+>>>>>>> main:Assets/Scenes/Level 1/Table.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
