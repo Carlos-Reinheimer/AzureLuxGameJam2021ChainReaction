@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2938415505109433853}
   - component: {fileID: -6560931274394017232}
   - component: {fileID: -3121040267555171023}
+  - component: {fileID: 7188392261958189524}
   m_Layer: 0
   m_Name: Rampa 45
   m_TagString: Untagged
@@ -111,3 +112,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalPosition: {x: 0, y: 0, z: 0}
   originalRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!54 &7188392261958189524
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3731132396077292584}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
