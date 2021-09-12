@@ -17,7 +17,7 @@ public class SandboxPlacementController : MonoBehaviour
     private GameObject finalPiece, pieceOne, pieceTwo, pieceThree, pieceFour, pieceFive, pieceSix, pieceSeven, pieceEight, pieceNine;
 
     [SerializeField]
-    private GameObject structureOne, structureTwo, structureThree, structureFour, structureFive;
+    private GameObject structureOne, structureTwo;
 
     [SerializeField]
     private Button piecesTab, structuresTab, playButton, editorButton;
@@ -60,6 +60,15 @@ public class SandboxPlacementController : MonoBehaviour
             scaleSliderY.value = objectInFocus.transform.localScale.y;
             scaleSliderZ.value = objectInFocus.transform.localScale.z;
         }
+
+        if (!objectInFocus.gameObject.GetComponent<PieceController>().canScaleSize)
+        {
+            scaleSliderX.interactable = false;
+            scaleSliderY.interactable = false;
+            scaleSliderZ.interactable = false;
+        }
+        if (!objectInFocus.gameObject.GetComponent<PieceController>().canScaleMass) scaleMass.interactable = false;
+
         objectInFocus.transform.localScale = new Vector3(scaleSliderX.value, scaleSliderY.value, scaleSliderZ.value);
         hasEdit = true;
 
@@ -67,7 +76,7 @@ public class SandboxPlacementController : MonoBehaviour
         objectRb.mass = scaleMass.value;
     }
 
-    public void DeleteObject()
+    public void MoveObject()
     {
         // delete object and instantiate a new one
         Destroy(objectInFocus);
@@ -77,8 +86,14 @@ public class SandboxPlacementController : MonoBehaviour
         ControlObjectTab.SetActive(false);
         objectInFocus = null;
         hasEdit = false;
+    }
 
-
+    public void DeleteObject()
+    {
+        Destroy(objectInFocus);
+        ControlObjectTab.SetActive(false);
+        objectInFocus = null;
+        hasEdit = false;
     }
 
     private void HandleEditPiece()
@@ -91,7 +106,7 @@ public class SandboxPlacementController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.tag == "Piece")
+                if (hit.collider.tag == "Structure" || hit.collider.tag == "Piece")
                 {
                     ControlObjectTab.SetActive(true);
                     objectInFocus = hit.transform.gameObject;
@@ -112,10 +127,23 @@ public class SandboxPlacementController : MonoBehaviour
     public void PlayGame()
     {
         GameObject[] allPieaces = GameObject.FindGameObjectsWithTag("Piece");
+        GameObject[] allStructures = GameObject.FindGameObjectsWithTag("Structure");
 
         for (int i = 0; i < allPieaces.Length; i++)
         {
-            allPieaces[i].gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            if (allPieaces[i].gameObject.GetComponent<Rigidbody>()) allPieaces[i].gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            else
+            {
+                for (int j = 0; j < allPieaces[j].transform.childCount; j++)
+                {
+                    allPieaces[i].transform.GetChild(j).gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                }
+            }
+        }
+
+        for (int a = 0; a < allStructures.Length; a++)
+        {
+            allStructures[a].gameObject.GetComponent<Rigidbody>().isKinematic = false;
         }
 
         playButton.gameObject.SetActive(false);
@@ -126,11 +154,32 @@ public class SandboxPlacementController : MonoBehaviour
     {
         // return objetcs to its original position
         GameObject[] allPieaces = GameObject.FindGameObjectsWithTag("Piece");
+        GameObject[] allStructures = GameObject.FindGameObjectsWithTag("Structure");
+
+
         for (int i = 0; i < allPieaces.Length; i++)
         {
-            allPieaces[i].transform.position = allPieaces[i].gameObject.GetComponent<PieceController>().originalPosition;
-            allPieaces[i].transform.rotation = allPieaces[i].gameObject.GetComponent<PieceController>().originalRotation;
-            allPieaces[i].gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            if (allPieaces[i].gameObject.GetComponent<PieceController>().isACollection)
+            {
+                for (int a = 0; a < allPieaces[i].transform.childCount; a++)
+                {
+                    allPieaces[i].transform.GetChild(a).transform.position = allPieaces[i].transform.GetChild(a).gameObject.GetComponent<PieceController>().originalPosition;
+                    allPieaces[i].transform.GetChild(a).transform.rotation = allPieaces[i].transform.GetChild(a).gameObject.GetComponent<PieceController>().originalRotation;
+                }
+            }
+            else
+            {
+                allPieaces[i].transform.position = allPieaces[i].gameObject.GetComponent<PieceController>().originalPosition;
+                allPieaces[i].transform.rotation = allPieaces[i].gameObject.GetComponent<PieceController>().originalRotation;
+                allPieaces[i].gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            }
+        }
+
+        for (int a = 0; a < allStructures.Length; a++)
+        {
+            allStructures[a].transform.position = allStructures[a].gameObject.GetComponent<PieceController>().originalPosition;
+            allStructures[a].transform.rotation = allStructures[a].gameObject.GetComponent<PieceController>().originalRotation;
+            allStructures[a].gameObject.GetComponent<Rigidbody>().isKinematic = true;
         }
 
         playButton.gameObject.SetActive(true);
@@ -146,7 +195,14 @@ public class SandboxPlacementController : MonoBehaviour
                 var pos = selectedGameObject.transform.position;
                 pos.y += verticalSpeed;
                 selectedGameObject.transform.SetPositionAndRotation(pos, selectedGameObject.transform.rotation);
-                selectedGameObject.GetComponent<PieceController>().ChangePosition(pos, selectedGameObject.transform.rotation);
+                if (selectedGameObject.gameObject.GetComponent<PieceController>().isACollection)
+                {
+                    for (int i = 0; i < selectedGameObject.transform.childCount; i++)
+                    {
+                        selectedGameObject.transform.GetChild(i).gameObject.GetComponent<PieceController>().ChangePosition(pos, selectedGameObject.transform.rotation);
+                    }
+                }
+                else selectedGameObject.GetComponent<PieceController>().ChangePosition(pos, selectedGameObject.transform.rotation);
 
             }
             else if (Input.GetAxis("Vertical") < 0)
@@ -155,7 +211,14 @@ public class SandboxPlacementController : MonoBehaviour
                 if (pos.y < 0) pos.y = 0;
                 else pos.y -= verticalSpeed;
                 selectedGameObject.transform.SetPositionAndRotation(pos, selectedGameObject.transform.rotation);
-                selectedGameObject.GetComponent<PieceController>().ChangePosition(pos, selectedGameObject.transform.rotation);
+                if (selectedGameObject.gameObject.GetComponent<PieceController>().isACollection)
+                {
+                    for (int i = 0; i < selectedGameObject.transform.childCount; i++)
+                    {
+                        selectedGameObject.transform.GetChild(i).gameObject.GetComponent<PieceController>().ChangePosition(pos, selectedGameObject.transform.rotation);
+                    }
+                }
+                else selectedGameObject.GetComponent<PieceController>().ChangePosition(pos, selectedGameObject.transform.rotation);
 
             }
         }
@@ -190,7 +253,15 @@ public class SandboxPlacementController : MonoBehaviour
                 selectedGameObject.transform.position = new Vector3(hitInfo.point.x, selectedGameObject.transform.position.y, hitInfo.point.z); // place object in the mouse position
                 Quaternion objectRotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
                 selectedGameObject.transform.rotation = objectRotation; // rotates the objects based on the normal of the object
-                selectedGameObject.GetComponent<PieceController>().ChangePosition(new Vector3(hitInfo.point.x, selectedGameObject.transform.position.y, hitInfo.point.z), objectRotation);
+
+                if (selectedGameObject.gameObject.GetComponent<PieceController>().isACollection)
+                {
+                    for (int i = 0; i < selectedGameObject.transform.childCount; i++)
+                    {
+                        selectedGameObject.transform.GetChild(i).gameObject.GetComponent<PieceController>().ChangePosition(new Vector3(hitInfo.point.x, selectedGameObject.transform.position.y, hitInfo.point.z), objectRotation);
+                    }
+                }
+                else selectedGameObject.GetComponent<PieceController>().ChangePosition(new Vector3(hitInfo.point.x, selectedGameObject.transform.position.y, hitInfo.point.z), objectRotation);
 
             }
 
@@ -235,7 +306,14 @@ public class SandboxPlacementController : MonoBehaviour
     {
         if (selectedGameObject == null)
         {
-            prefab.GetComponent<Rigidbody>().isKinematic = true;
+            if (prefab.GetComponent<Rigidbody>()) prefab.GetComponent<Rigidbody>().isKinematic = true;
+            else
+            {
+                for (int i = 0; i < prefab.transform.childCount; i++)
+                {
+                    prefab.transform.GetChild(i).GetComponent<Rigidbody>().isKinematic = true;
+                }
+            }
             selectedGameObject = Instantiate(prefab, prefab.transform.position, prefab.transform.rotation);
         }
         else Destroy(selectedGameObject);
@@ -306,20 +384,6 @@ public class SandboxPlacementController : MonoBehaviour
     public void GenerateStructureTwo()
     {
         HandleSelectPrefab(structureTwo);
-    }
-
-    public void GenerateStructureThree()
-    {
-        HandleSelectPrefab(structureThree);
-    }
-    public void GenerateStructureFour()
-    {
-        HandleSelectPrefab(structureFour);
-    }
-
-    public void GenerateStructureFive()
-    {
-        HandleSelectPrefab(structureFive);
     }
     // ---------------- ---------------- ---------------- ----------------
 }
