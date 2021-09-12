@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Cenario/colher.fbx.meta
 guid: 853cccdbf344ea7498ebe90fe40cf5cb
+=======
+guid: 345e346b3fa1e664f9b372a848d4cf53
+>>>>>>> levels:Assets/Prefabs/Cenario/bottle.fbx.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
