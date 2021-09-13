@@ -22,11 +22,8 @@ public class PassLevel : MonoBehaviour
     }
     void NextLevel()
     {
-        Debug.Log("shrek 1");
         DefaultCanvas.SetActive(false);
-        Debug.Log("shrek 2");
         if (NextCanvas != null) NextCanvas.SetActive(true);
-        Debug.Log("shrek 3");
         Time.timeScale = 0;
         DefaultCanvas.SetActive(true);
         if (NextCanvas != null) NextCanvas.SetActive(false);
@@ -37,29 +34,41 @@ public class PassLevel : MonoBehaviour
             case 1:
                 Debug.Log(levelNumber);
                 cena = "Level 1";
+                Time.timeScale = 1;
                 break;
             case 2:
                 Debug.Log(levelNumber);
                 cena = "Level 2";
+                Time.timeScale = 1;
                 break;
             case 3:
                 Debug.Log(levelNumber);
                 cena = "Level 3";
+                Time.timeScale = 1;
                 break;
             case 4:
                 Debug.Log(levelNumber);
                 cena = "Level 4";
+                Time.timeScale = 1;
                 break;
             case 5:
                 Debug.Log(levelNumber);
                 cena = "Level 5";
+                Time.timeScale = 1;
                 break;
             case 6:
                 Debug.Log(levelNumber);
                 cena = "Level 6";
+                Time.timeScale = 1;
+                break;
+            case 7:
+                Debug.Log(levelNumber);
+                cena = "Sandbox";
+                Time.timeScale = 1;
                 break;
             default:
                 Debug.Log(levelNumber);
+                Time.timeScale = 1;
                 break;
         }
         SceneManager.LoadScene(cena);
