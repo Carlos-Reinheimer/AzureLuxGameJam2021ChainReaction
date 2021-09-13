@@ -104,7 +104,7 @@ public class AuthController : MonoBehaviour
         LoginButton.SetActive(true);
 
         // loading game assync to use loadbar
-        loadingOperation = SceneManager.LoadSceneAsync("Game");
+        loadingOperation = SceneManager.LoadSceneAsync("MainMenu");
         LoadingPanel.SetActive(true);
     }
 
