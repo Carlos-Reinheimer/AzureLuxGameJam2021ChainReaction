@@ -38,6 +38,14 @@ public class PassLevel : MonoBehaviour
         Debug.Log("level passed to " + levelNumber);
         NextLevel();
     }
+
+    public void TriggerSanta()
+    {
+        // call this function when piece trigger on santa
+        levelNumber += 1;
+        NextLevel();
+    }
+
     void PassNewLevel()
     {
         levelNumber += 1;

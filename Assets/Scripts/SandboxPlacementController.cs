@@ -327,12 +327,10 @@ public class SandboxPlacementController : MonoBehaviour
             }
 
             selectedGameObject = Instantiate(prefab, prefab.transform.position, prefab.transform.rotation);
-            //placePieceAudio.gameObject.GetComponent<AudioSource>().Play();
             AudioClip audioToPlay = prefab.gameObject.tag == "Piece" ? placePieceAudio : placeStructureAudio;
             selectedGameObject.gameObject.GetComponent<AudioSource>().PlayOneShot(audioToPlay);
         }
         else Destroy(selectedGameObject);
-
     }
     public void GeneratePieceOne()
     {
