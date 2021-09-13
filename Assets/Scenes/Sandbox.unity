@@ -2380,6 +2380,8 @@ MonoBehaviour:
   playButton: {fileID: 158872499}
   editorButton: {fileID: 781706969}
   ControlObjectTab: {fileID: 1449398188}
+  placeStructureAudio: {fileID: 8300000, guid: f7d4a0d83fd09514a8afff8b6f175599, type: 3}
+  placePieceAudio: {fileID: 8300000, guid: 1e73254260f8657429f8a0ceaeea4bd9, type: 3}
 --- !u!114 &770404516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6617,7 +6619,7 @@ MonoBehaviour:
   targetingSettingsFoldout: 0
   inputSettingsFoldout: 0
   useFixedUpdate: 0
-  keyboardMovementSpeed: 30
+  keyboardMovementSpeed: 15
   screenEdgeMovementSpeed: 3
   followingSpeed: 5
   rotationSped: 3
