@@ -2154,7 +2154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9e2a9e5fb6df04d9fb257b93fa722e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalSpeed: 0.01
+  verticalSpeed: 0.1
   pieceOne: {fileID: 5655216026199976512, guid: a2073024d62ff1c48b95caf4fb1e5868, type: 3}
   pieceTwo: {fileID: 984913623605365928, guid: eb2b40d72efcf3d47ba69c651aa6a0a1, type: 3}
   pieceThree: {fileID: 7367165614249257758, guid: 881feb95bae4be5448383075503337dd, type: 3}
@@ -6528,7 +6528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ef8c68bade09b41aca258d42a632f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastTab: 0
+  lastTab: 1
   movementSettingsFoldout: 0
   zoomingSettingsFoldout: 0
   rotationSettingsFoldout: 0
@@ -6542,7 +6542,7 @@ MonoBehaviour:
   followingSpeed: 5
   rotationSped: 3
   panningSpeed: 10
-  mouseRotationSpeed: 1000
+  mouseRotationSpeed: 1500
   autoHeight: 1
   groundMask:
     serializedVersion: 2

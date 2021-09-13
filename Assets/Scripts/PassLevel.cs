@@ -42,8 +42,9 @@ public class PassLevel : MonoBehaviour
     public void TriggerSanta()
     {
         // call this function when piece trigger on santa
-        levelNumber += 1;
-        NextLevel();
+        DefaultCanvas.SetActive(false);
+        NextCanvas.SetActive(true);
+        Time.timeScale = 0;
     }
 
     void PassNewLevel()
@@ -53,11 +54,6 @@ public class PassLevel : MonoBehaviour
     }
     void NextLevel()
     {
-        DefaultCanvas.SetActive(false);
-        if (NextCanvas != null) NextCanvas.SetActive(true);
-        Time.timeScale = 0;
-        DefaultCanvas.SetActive(true);
-        if (NextCanvas != null) NextCanvas.SetActive(false);
         string cena = "MainMenu";
 
         switch (levelNumber)
@@ -92,13 +88,9 @@ public class PassLevel : MonoBehaviour
                 cena = "Level 6";
                 Time.timeScale = 1;
                 break;
-            case 7:
-                Debug.Log(levelNumber);
-                cena = "Sandbox";
-                Time.timeScale = 1;
-                break;
             default:
                 Debug.Log(levelNumber);
+                cena = "Sandbox";
                 Time.timeScale = 1;
                 break;
         }

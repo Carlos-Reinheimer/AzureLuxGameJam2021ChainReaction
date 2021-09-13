@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 314719876812835672}
   - component: {fileID: 7567843379646500865}
   - component: {fileID: 7016974766998522631}
+  - component: {fileID: 599205558}
   m_Layer: 0
   m_Name: Santa
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2260490900318759565}
-  m_LocalRotation: {x: 0.000000057601248, y: -0.70710576, z: 0.000000057601074, w: 0.7071079}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 15.23, y: 0.0438447, z: -0.04}
   m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children: []
@@ -93,7 +94,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.04699019
+  m_Radius: 0.03
   m_Height: 0.16632605
   m_Direction: 1
   m_Center: {x: -0.00006886014, y: 0.08202176, z: -0.00031479457}
@@ -108,5 +109,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.09398038, y: 0.16632605, z: 0.06734533}
-  m_Center: {x: -0.00006886014, y: 0.08202176, z: -0.00031479457}
+  m_Size: {x: 0.09398037, y: 0.16632609, z: 0.069703415}
+  m_Center: {x: -0.000068859255, y: 0.08202178, z: 0.00086424546}
+--- !u!114 &599205558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260490900318759565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32591f7a3496074a9a0fefcedf0c6a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Peca: {fileID: 0}
+  Santa: {fileID: 2260490900318759565}
+  LevelPasser: {fileID: 0}
