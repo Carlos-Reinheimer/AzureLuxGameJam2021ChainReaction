@@ -42,6 +42,7 @@ public class PauseController : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        Time.timeScale = 1;
         loadingOperation = SceneManager.LoadSceneAsync("MainMenu");
         loadingPanel.gameObject.SetActive(true);
     }
