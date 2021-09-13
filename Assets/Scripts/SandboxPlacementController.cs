@@ -14,7 +14,7 @@ public class SandboxPlacementController : MonoBehaviour
     public float verticalSpeed = 0.001f;
 
     [SerializeField]
-    private GameObject finalPiece, pieceOne, pieceTwo, pieceThree, pieceFour, pieceFive, pieceSix, pieceSeven, pieceEight, pieceNine;
+    private GameObject pieceOne, pieceTwo, pieceThree, pieceFour, pieceFive, pieceSix, pieceSeven, pieceEight, pieceNine;
 
     [SerializeField]
     private GameObject structureOne, structureTwo;
@@ -117,7 +117,6 @@ public class SandboxPlacementController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log(hit.collider.tag);
                 if (hit.collider.tag == "Structure" || hit.collider.tag == "Piece")
                 {
                     ControlObjectTab.SetActive(true);
@@ -335,12 +334,6 @@ public class SandboxPlacementController : MonoBehaviour
         else Destroy(selectedGameObject);
 
     }
-
-    public void GenerateFinalPiece()
-    {
-        HandleSelectPrefab(finalPiece);
-    }
-
     public void GeneratePieceOne()
     {
         HandleSelectPrefab(pieceOne);

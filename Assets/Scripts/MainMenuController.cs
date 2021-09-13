@@ -25,6 +25,12 @@ public class MainMenuController : MonoBehaviour
         progressBar.value = Mathf.Clamp01(loadingOperation.progress / 0.9f);
     }
 
+    public void NewGame()
+    {
+        loadingOperation = SceneManager.LoadSceneAsync("Level 1");
+        loadingPanel.gameObject.SetActive(true);
+    }
+
     public void openHowToPlay()
     {
         howToPlayPanel.gameObject.SetActive(true);

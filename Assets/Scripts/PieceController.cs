@@ -10,7 +10,15 @@ public class PieceController : MonoBehaviour
     public bool canScaleSize = false;
     public bool canScaleMass = false;
     public bool isACollection = false;
-    public bool rotate90Deg = false;
+    public bool isPrepositionedPiece = false;
+    public bool isTriggerPiece = false;
+    public bool allowEditMode = true;
+
+    private void Start()
+    {
+        originalPosition = gameObject.transform.position;
+        originalRotation = gameObject.transform.rotation;
+    }
 
     public void ChangePosition(Vector3 newPosition, Quaternion newRotation)
     {

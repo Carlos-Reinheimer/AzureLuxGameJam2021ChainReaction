@@ -9,6 +9,10 @@ public class PauseGameChecker : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) pausePanel.GetComponent<PauseController>().PauseGame();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0;
+            pausePanel.GetComponent<PauseController>().PauseGame();
+        }
     }
 }

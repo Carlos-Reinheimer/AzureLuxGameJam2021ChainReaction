@@ -14,16 +14,19 @@ public class PlacementController : MonoBehaviour
     public float verticalSpeed = 0.001f;
 
     [SerializeField]
-    private GameObject finalPiece, pieceOne, pieceTwo, pieceThree, pieceFour;
+    private GameObject pieceOne, pieceTwo, pieceThree, pieceFour, pieceFive;
 
     [SerializeField]
-    private GameObject ramp45, shortVerticalRamp, longRamp, longHorizontalRamp;
+    private GameObject structureOne, structureTwo;
 
     [SerializeField]
     private Button piecesTab, structuresTab, playButton, editorButton;
 
     [SerializeField]
     private GameObject ControlObjectTab;
+
+    [SerializeField]
+    private AudioClip placeStructureAudio, placePieceAudio;
 
     //[SerializeField]
     //private KeyCode newObjectHotkey = KeyCode.A;
@@ -63,6 +66,24 @@ public class PlacementController : MonoBehaviour
             scaleSliderY.value = objectInFocus.transform.localScale.y;
             scaleSliderZ.value = objectInFocus.transform.localScale.z;
         }
+
+        if (!objectInFocus.gameObject.GetComponent<PieceController>().canScaleSize)
+        {
+            scaleSliderX.interactable = false;
+            scaleSliderY.interactable = false;
+            scaleSliderZ.interactable = false;
+        }
+        else
+        {
+            scaleSliderX.interactable = true;
+            scaleSliderY.interactable = true;
+            scaleSliderZ.interactable = true;
+        }
+
+        if (!objectInFocus.gameObject.GetComponent<PieceController>().canScaleMass) scaleMass.interactable = false;
+        else scaleMass.interactable = true;
+
+
         objectInFocus.transform.localScale = new Vector3(scaleSliderX.value, scaleSliderY.value, scaleSliderZ.value);
         hasEdit = true;
 
@@ -70,7 +91,7 @@ public class PlacementController : MonoBehaviour
         objectRb.mass = scaleMass.value;
     }
 
-    public void DeleteObject()
+    public void MoveObject()
     {
         // delete object and instantiate a new one
         Destroy(objectInFocus);
@@ -80,8 +101,14 @@ public class PlacementController : MonoBehaviour
         ControlObjectTab.SetActive(false);
         objectInFocus = null;
         hasEdit = false;
+    }
 
-
+    public void DeleteObject()
+    {
+        Destroy(objectInFocus);
+        ControlObjectTab.SetActive(false);
+        objectInFocus = null;
+        hasEdit = false;
     }
 
     private void HandleEditPiece()
@@ -94,7 +121,7 @@ public class PlacementController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.tag == "Piece")
+                if ((hit.collider.tag == "Structure" || hit.collider.tag == "Piece") && hit.transform.gameObject.GetComponent<PieceController>().allowEditMode)
                 {
                     ControlObjectTab.SetActive(true);
                     objectInFocus = hit.transform.gameObject;
@@ -115,10 +142,26 @@ public class PlacementController : MonoBehaviour
     public void PlayGame()
     {
         GameObject[] allPieaces = GameObject.FindGameObjectsWithTag("Piece");
+        GameObject[] allStructures = GameObject.FindGameObjectsWithTag("Structure");
 
         for (int i = 0; i < allPieaces.Length; i++)
         {
-            allPieaces[i].gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            if (allPieaces[i].gameObject.GetComponent<Rigidbody>()) allPieaces[i].gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            else if (allPieaces[i].transform.childCount > 0)
+            {
+                for (int j = 0; j < allPieaces[j].transform.childCount; j++)
+                {
+                    allPieaces[i].transform.GetChild(j).gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                }
+            }
+        }
+
+        for (int a = 0; a < allStructures.Length; a++)
+        {
+            if (!allStructures[a].gameObject.GetComponent<PieceController>().isPrepositionedPiece)
+            {
+                allStructures[a].gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            }
         }
 
         playButton.gameObject.SetActive(false);
@@ -129,11 +172,32 @@ public class PlacementController : MonoBehaviour
     {
         // return objetcs to its original position
         GameObject[] allPieaces = GameObject.FindGameObjectsWithTag("Piece");
+        GameObject[] allStructures = GameObject.FindGameObjectsWithTag("Structure");
+
+
         for (int i = 0; i < allPieaces.Length; i++)
         {
-            allPieaces[i].transform.position = allPieaces[i].gameObject.GetComponent<PieceController>().originalPosition;
-            allPieaces[i].transform.rotation = allPieaces[i].gameObject.GetComponent<PieceController>().originalRotation;
-            allPieaces[i].gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            if (allPieaces[i].gameObject.GetComponent<PieceController>().isACollection)
+            {
+                for (int a = 0; a < allPieaces[i].transform.childCount; a++)
+                {
+                    allPieaces[i].transform.GetChild(a).transform.position = allPieaces[i].transform.GetChild(a).gameObject.GetComponent<PieceController>().originalPosition;
+                    allPieaces[i].transform.GetChild(a).transform.rotation = allPieaces[i].transform.GetChild(a).gameObject.GetComponent<PieceController>().originalRotation;
+                }
+            }
+            else
+            {
+                allPieaces[i].transform.position = allPieaces[i].gameObject.GetComponent<PieceController>().originalPosition;
+                allPieaces[i].transform.rotation = allPieaces[i].gameObject.GetComponent<PieceController>().originalRotation;
+                allPieaces[i].gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            }
+        }
+
+        for (int a = 0; a < allStructures.Length; a++)
+        {
+            allStructures[a].transform.position = allStructures[a].gameObject.GetComponent<PieceController>().originalPosition;
+            allStructures[a].transform.rotation = allStructures[a].gameObject.GetComponent<PieceController>().originalRotation;
+            allStructures[a].gameObject.GetComponent<Rigidbody>().isKinematic = true;
         }
 
         playButton.gameObject.SetActive(true);
@@ -193,14 +257,13 @@ public class PlacementController : MonoBehaviour
                 selectedGameObject.transform.position = new Vector3(hitInfo.point.x, selectedGameObject.transform.position.y, hitInfo.point.z); // place object in the mouse position
                 Quaternion objectRotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
                 selectedGameObject.transform.rotation = objectRotation; // rotates the objects based on the normal of the object
+
                 selectedGameObject.GetComponent<PieceController>().ChangePosition(new Vector3(hitInfo.point.x, selectedGameObject.transform.position.y, hitInfo.point.z), objectRotation);
 
             }
 
         }
     }
-
-
 
     // ---------------- HANDLE TABS ----------------
     public void SwitchToPieces()
@@ -241,15 +304,12 @@ public class PlacementController : MonoBehaviour
         if (selectedGameObject == null)
         {
             prefab.GetComponent<Rigidbody>().isKinematic = true;
+
             selectedGameObject = Instantiate(prefab, prefab.transform.position, prefab.transform.rotation);
+            AudioClip audioToPlay = prefab.gameObject.tag == "Piece" ? placePieceAudio : placeStructureAudio;
+            selectedGameObject.gameObject.GetComponent<AudioSource>().PlayOneShot(audioToPlay);
         }
         else Destroy(selectedGameObject);
-
-    }
-
-    public void GenerateFinalPiece()
-    {
-        HandleSelectPrefab(finalPiece);
     }
 
     public void GeneratePieceOne()
@@ -271,25 +331,21 @@ public class PlacementController : MonoBehaviour
         HandleSelectPrefab(pieceFour);
     }
 
+    public void GeneratePieceFive()
+    {
+        HandleSelectPrefab(pieceFive);
+    }
+
 
 
     public void GenerateStructureOne()
     {
-        HandleSelectPrefab(ramp45);
+        HandleSelectPrefab(structureOne);
     }
 
     public void GenerateStructureTwo()
     {
-        HandleSelectPrefab(shortVerticalRamp);
-    }
-
-    public void GenerateStructureThree()
-    {
-        HandleSelectPrefab(longRamp);
-    }
-    public void GenerateStructureFour()
-    {
-        HandleSelectPrefab(longHorizontalRamp);
+        HandleSelectPrefab(structureTwo);
     }
     // ---------------- ---------------- ---------------- ----------------
 

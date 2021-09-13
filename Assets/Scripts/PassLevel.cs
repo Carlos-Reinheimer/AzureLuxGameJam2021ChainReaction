@@ -1,13 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PassLevel : MonoBehaviour
 {
     public int levelNumber = 0;
-    public GameObject DefaultCanvas;
+    public GameObject DefaultCanvas, loadingPanel;
     public GameObject NextCanvas;
+    public Slider progressBar;
+
+    AsyncOperation loadingOperation;
+
+    private void Update()
+    {
+        if (loadingPanel.activeSelf)
+        {
+            UpdateProgressBar();
+        }
+    }
+
+    private void UpdateProgressBar()
+    {
+        progressBar.value = Mathf.Clamp01(loadingOperation.progress / 0.9f);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        loadingOperation = SceneManager.LoadSceneAsync("MainMenu");
+        loadingPanel.gameObject.SetActive(true);
+    }
 
     public void NextLevelButton()
     {
@@ -71,6 +94,7 @@ public class PassLevel : MonoBehaviour
                 Time.timeScale = 1;
                 break;
         }
-        SceneManager.LoadScene(cena);
+        loadingOperation = SceneManager.LoadSceneAsync(cena);
+        loadingPanel.gameObject.SetActive(true);
     }
 }
