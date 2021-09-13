@@ -25,6 +25,9 @@ public class SandboxPlacementController : MonoBehaviour
     [SerializeField]
     private GameObject ControlObjectTab;
 
+    [SerializeField]
+    private AudioClip placeStructureAudio, placePieceAudio;
+
     private GameObject selectedGameObject, objectInFocus;
     private float mouseWheelRotation;
     private bool hasEdit = false;
@@ -324,9 +327,10 @@ public class SandboxPlacementController : MonoBehaviour
                 }
             }
 
-            //if (prefab.gameObject.GetComponent<PieceController>().rotate90Deg) prefab.transform.Rotate(-90f, 0, 0f);
-            //Quaternion newRotation = prefab.gameObject.GetComponent<PieceController>().rotate90Deg ? new Quaternion(-90, prefab.transform.rotation.y, prefab.transform.rotation.z, prefab.transform.rotation.w) : prefab.transform.rotation;
             selectedGameObject = Instantiate(prefab, prefab.transform.position, prefab.transform.rotation);
+            //placePieceAudio.gameObject.GetComponent<AudioSource>().Play();
+            AudioClip audioToPlay = prefab.gameObject.tag == "Piece" ? placePieceAudio : placeStructureAudio;
+            selectedGameObject.gameObject.GetComponent<AudioSource>().PlayOneShot(audioToPlay);
         }
         else Destroy(selectedGameObject);
 
